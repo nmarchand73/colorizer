@@ -1,0 +1,61 @@
+# Large model files
+color/*.onnx
+color/__pycache__/
+
+# Archive folder with legacy files
+archive/
+
+# Temporary files
+temp/
+*.tmp
+*.temp
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Test files
+in/
+*.mp4
+*.avi
+*.mkv
+*.jpg
+*.jpeg
+*.png
+*.bmp
+
+# Keep directory structure but ignore contents
+!color/deoldify.py
+!color/place onnx model here
+!templates/
+
+# Exclude large executables and binaries
+tools/*.exe
+tools/*.dll
+*.exe
+*.dll
+*.bin
+

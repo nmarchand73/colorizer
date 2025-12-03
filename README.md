@@ -1,39 +1,68 @@
-# deoldify-onnx
+# Colorizer Web App
 
-Updated version: option render factor added (only commandline version)
+Modern web application for colorizing black & white images and videos using DeOldify ONNX models.
 
-New models for use with render factor: 
+## Features
 
-https://drive.google.com/drive/folders/1bU9Zj7zGVEujIzvDTb1b9cyWU3s__WQR?usp=sharing
+- 🖼️ **Image Colorization** - Transform black & white photos into color
+- 🎬 **Video Colorization** - Colorize entire videos with live preview
+- 🎨 **3 Models** - Choose between Artistic, Stable, or Video-optimized models
+- ⚡ **Real-time Preview** - See frames as they're processed
+- 🎛️ **Adjustable Quality** - Control render factor for quality vs speed
 
-.
+## Quick Start
 
-Simple image and video colorization using onnx converted deoldify model.
+1. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Easy to install. Can be run on CPU or nVidia GPU
+2. **Run the application:**
+   ```bash
+   python app.py
+   ```
 
-ffmpeg for video colorzation required.
+3. **Open in browser:**
+   ```
+   http://localhost:5000
+   ```
 
-Added floating point 16 model for 100% faster inference and simple GUI version.
+## Requirements
 
-For inference run:
+- Python 3.7+
+- ONNX Runtime (CPU or CUDA)
+- FFmpeg (for video audio processing)
+- Models in `color/` directory:
+  - `ColorizeArtistic_dyn.onnx`
+  - `ColorizeStable_dyn.onnx`
+  - `DeoldifyVideo_dyn.onnx`
 
-Image:
-python image.py --source_image "image.jpg"
+## Project Structure
 
-Video:
-python video.py --source "video.mp4" --result "video_colorized.mp4" --audio
+```
+Colorizer/
+├── app.py              # Flask web application
+├── templates/          # Web interface
+├── color/             # ONNX models and processing code
+├── tools/              # FFmpeg executables
+├── temp/               # Temporary files
+└── archive/            # Legacy GUI/CLI applications
+```
 
-Image example:
-![colorizer1](https://github.com/instant-high/deoldify-onnx/assets/77229558/171642dd-9034-4ca7-8d29-c07c6e5e9f0a)
+## Usage
 
+1. Upload an image or video using drag & drop
+2. Select model and adjust render factor
+3. Click "Colorize" and wait for processing
+4. Download the colorized result
 
-https://github.com/instant-high/deoldify-onnx/assets/77229558/3824e96d-fffc-494e-8ce1-193e6a77c8b6
+## Models
 
-https://github.com/instant-high/deoldify-onnx/assets/77229558/543e1dd1-27da-4c63-95a9-9c0696adea51
+- **Artistic** - More vibrant colors, best for images
+- **Stable** - More stable colors, works for both images and videos
+- **Video** - Optimized for video processing
 
+## License
 
-original deoldify:
-
-https://github.com/jantic/DeOldify
+Based on [DeOldify](https://github.com/jantic/DeOldify)
 
